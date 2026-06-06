@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Солодощі</title>
+    <style>
+        :root {
+            --pink1: #fff0f7;
+            --pink2: #ffd1e8;
+            --pink3: #ff8fc2
+        }
+
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, 'Helvetica Neue', Arial
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 20%, rgba(255, 214, 236, 0.9), transparent 30%),
+                radial-gradient(circle at 90% 80%, rgba(255, 182, 211, 0.9), transparent 30%),
+                linear-gradient(135deg, var(--pink1) 0%, var(--pink2) 50%, #ffd0eb 100%);
+            color: #4a1336;
+            overflow: hidden;
+        }
+
+        /* Decorative waving shapes (background) */
+        .waves {
+            position: fixed;
+            right: -8%;
+            top: -12%;
+            width: 72vmax;
+            height: 72vmax;
+            z-index: 0;
+            opacity: 0.95;
+            pointer-events: none;
+        }
+
+        .container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 4rem
+        }
+
+        main {
+            max-width: 680px
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0 0 .6rem;
+            line-height: 1.05
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            margin: 0 0 1.6rem;
+            color: #6b2a4a;
+            font-weight: 500
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 12px 26px;
+            background: linear-gradient(180deg, var(--pink3), var(--pink2));
+            color: white;
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            box-shadow: 0 8px 22px rgba(171, 56, 117, 0.18);
+            text-decoration: none
+        }
+
+        /* Right-side thematic image (cupcake SVG) */
+        .art {
+            position: fixed;
+            right: 2.5vw;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36vmin;
+            max-width: 420px;
+            z-index: 1
+        }
+
+        @media(max-width:900px) {
+            .art {
+                display: none
+            }
+
+            .container {
+                padding: 4rem 2rem
+            }
+
+            h1 {
+                font-size: 2.2rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <svg class="waves" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true">
+        <defs>
+            <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#ffd8ec" />
+                <stop offset="1" stop-color="#ffb3d9" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(400,400)">
+            <path d="M-450,-50 C -300,80 -150, -120 0,-30 C 150,60 300,-100 450,-30 L450,450 L-450,450 Z"
+                fill="url(#g1)" opacity="0.9" />
+            <path d="M-450,50 C -300,180 -150,20 0,70 C 150,120 300,10 450,80 L450,450 L-450,450 Z" fill="#ffd1e8"
+                opacity="0.6" />
+        </g>
+    </svg>
+
+    <div class="container">
+        <main>
+            <h1>Солодка насолода</h1>
+            <h2>Тістечка, кекси й макарони — маленьке свято в кожному шматочку</h2>
+            <a class="cta" href="#">Скуштувати зараз</a>
+        </main>
+    </div>
+
+    <!-- Thematic cupcake illustration (inline SVG) -->
+    <svg class="art" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg" role="img"
+        aria-label="cupcake illustration">
+        <defs>
+            <linearGradient id="frost" x1="0" x2="1">
+                <stop offset="0" stop-color="#fff2fb" />
+                <stop offset="1" stop-color="#ffd1e8" />
+            </linearGradient>
+            <linearGradient id="wrapper" x1="0" x2="1">
+                <stop offset="0" stop-color="#ffb3d9" />
+                <stop offset="1" stop-color="#ff8fc2" />
+            </linearGradient>
+        </defs>
+        <g transform="translate(0,10)">
+            <ellipse cx="100" cy="160" rx="78" ry="22" fill="rgba(0,0,0,0.06)" />
+            <path
+                d="M36 146 L164 146 C168 146 172 142 170 138 L154 94 C150 84 142 78 132 78 H68 C58 78 50 84 46 94 L30 138 C28 142 32 146 36 146 Z"
+                fill="url(#wrapper)" />
+            <g transform="translate(20,-20)">
+                <path d="M60 80 C48 80 40 68 40 56 C40 44 52 36 64 36 C76 36 88 44 88 56 C88 68 80 80 68 80 Z"
+                    fill="#ff6fa3" opacity="0.9" />
+                <path d="M110 80 C98 80 90 68 90 56 C90 44 102 36 114 36 C126 36 138 44 138 56 C138 68 130 80 118 80 Z"
+                    fill="#ff9acb" opacity="0.95" />
+                <path d="M20 88 C40 48 120 48 140 88 C140 120 40 120 20 88 Z" fill="url(#frost)" />
+                <circle cx="70" cy="70" r="3" fill="#ff3b7a" />
+                <circle cx="95" cy="61" r="3" fill="#ffe66d" />
+                <circle cx="122" cy="74" r="3" fill="#8be3ff" />
+            </g>
+        </g>
+    </svg>
+
+</body>
+
+</html>
